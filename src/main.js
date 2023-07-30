@@ -18,24 +18,28 @@ document.querySelector(".check").addEventListener("click", function () {
                 document.querySelector("#guess-status").textContent =
                     "No number";
                 document.querySelector(".number").textContent = guess;
-            } else if (guess < secreteNumber) {
+            }
+            else if (guess < secreteNumber) {
                 document.querySelector("#guess-status").textContent = "Too low";
                 document.querySelector(".score").textContent =
                     Number(document.querySelector(".score").textContent) - 1;
-            } else if (guess > secreteNumber) {
+            }
+            else if (guess > secreteNumber) {
                 document.querySelector("#guess-status").textContent =
                     "Too high";
                 document.querySelector(".score").textContent =
                     Number(document.querySelector(".score").textContent) - 1;
-            } else {
+            }
+            else {
                 document.querySelector("#guess-status").textContent =
                     "Correct number!";
-                const highScore = Number(
+                let highScore = Number(
                     document.querySelector(".highscore").textContent
                 );
-                document.querySelector(".highscore").textContent =
-                    Number(document.querySelector(".score").textContent) +
-                    highScore;
+                let score = Number(document.querySelector(".score").textContent);
+                if (highScore < score) {
+                    document.querySelector(".highscore").textContent = score;
+                }
                 document.querySelector("body").style.backgroundImage =
                     "linear-gradient(#96c146,#518622)";
             }
