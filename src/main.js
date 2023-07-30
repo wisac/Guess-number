@@ -9,24 +9,22 @@ document.querySelector(".check").addEventListener("click", function () {
     if (!guess) {
         console.log("No number");
         document.querySelector("#guess-status").textContent = "No number";
-    } else {
         document.querySelector(".number").textContent = guess;
-        if (guess < secreteNumber) {
-            document.querySelector("#guess-status").textContent = "Too low";
-            const oldScore = Number(
-                document.querySelector(".score").textContent
-            );
-            document.querySelector(".score").textContent = oldScore - 1;
-        } else if (guess > secreteNumber) {
-            document.querySelector("#guess-status").textContent = "Too high";
-            const oldScore = Number(
-                document.querySelector(".score").textContent
-            );
-            document.querySelector(".score").textContent = oldScore - 1;
-        } else {
-            document.querySelector("#guess-status").textContent =
-                "Correct number!";
-        }
-        console.log(typeof guess);
+    } else if (guess < secreteNumber) {
+        document.querySelector("#guess-status").textContent = "Too low";
+        document.querySelector(".score").textContent =
+            Number(document.querySelector(".score").textContent) - 1;
+    } else if (guess > secreteNumber) {
+        document.querySelector("#guess-status").textContent = "Too high";
+        document.querySelector(".score").textContent =
+            Number(document.querySelector(".score").textContent) - 1;
+    } else {
+        document.querySelector("#guess-status").textContent = "Correct number!";
+        const highScore = Number(
+            document.querySelector(".highscore").textContent
+        );
+        document.querySelector(".highscore").textContent =
+            Number(document.querySelector(".score").textContent) + highScore;
+            document.querySelector("body").style.backgroundImage = "linear-gradient(#96c146,#518622)";
     }
 });
