@@ -1,6 +1,6 @@
 A simple number guessing game.
 
-**GAME RULES**
+**GAME RULES**<br>
 You have *20 attempt* to guess my secret number. When you guess correctly, at the first attempt, you receive a score of 20.
 For every wrong guess you make, the attainable score is decreased by 1. When you eventually guess right, you will receive whatever value is contained in the attainable score as your score.
 When the attainable score gets to zero, it a GAME OVER!. 
